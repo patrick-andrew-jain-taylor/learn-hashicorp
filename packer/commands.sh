@@ -22,3 +22,5 @@ packer build --var-file=example.pkrvars.hcl docker-ubuntu.pkr.hcl
 packer build .
 # Set var from command line
 packer build --var docker_image=ubuntu:groovy .
+# Verify tags
+docker images learn-packer
