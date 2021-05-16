@@ -53,3 +53,31 @@ echo '{
 }' > ./consul.d/web.json
 # Reload consul
 consul reload
+# Store data
+consul agent -dev
+# Add min
+consul kv put redis/config/minconns 1
+# Add max
+consul kv put redis/config/maxconns 25
+# Add metadata
+consul kv put -flags=42 redis/config/users/admin abcd1234
+# Query value
+consul kv get redis/config/minconns
+# Retrieve detailed metadata
+consul kv get -detailed redis/config/users/admin
+# List all keys in KV store
+consul kv get -recurse
+# Delete data
+consul kv delete redis/config/minconns
+# Delete all redis keys
+consul kv delete -recurse redis
+# Update existing key
+consul kv put foo bar
+# Get updated key
+consul kv get foo
+# Put new value at path
+consul kv put foo zip
+# Check updated path
+consul kv get foo
+# UI
+consul agent -dev -ui
