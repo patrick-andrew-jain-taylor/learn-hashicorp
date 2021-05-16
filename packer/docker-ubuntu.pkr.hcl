@@ -17,9 +17,15 @@ source "docker" "ubuntu" {
   commit = true
 }
 
+source "docker" "ubuntu-bionic" {
+  image  = "ubuntu:bionic"
+  commit = true
+}
+
 build {
   sources = [
-    "source.docker.ubuntu"
+    "source.docker.ubuntu",
+    "source.docker.ubuntu-bionic",
   ]
 
   provisioner "shell" {
