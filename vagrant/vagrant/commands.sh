@@ -20,3 +20,7 @@ touch /vagrant/foo
 exit
 # HTML
 mkdir html
+# Check guest machine
+vagrant ssh
+wget -qO- 127.0.0.1
+logout
