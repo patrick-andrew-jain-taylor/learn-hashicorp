@@ -27,3 +27,9 @@ logout
 # Add vagrant share
 vagrant plugin install vagrant-share
 vagrant share
+# Suspend
+vagrant suspend
+# Halt
+vagrant halt
+# Destroy
+vagrant destroy
