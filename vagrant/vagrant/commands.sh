@@ -33,3 +33,5 @@ vagrant suspend
 vagrant halt
 # Destroy
 vagrant destroy
+# Try new provider
+vagrant up --provider=vmware_desktop
