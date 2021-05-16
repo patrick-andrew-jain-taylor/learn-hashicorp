@@ -16,3 +16,5 @@ docker run -it <image_id>
 cat example.txt
 # Exit
 exit
+# Build with var files
+packer build --var-file=example.pkrvars.hcl docker-ubuntu.pkr.hcl
