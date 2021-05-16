@@ -35,3 +35,19 @@ curl http://localhost:8500/v1/catalog/service/web
 # Query for healthy instances
 curl 'http://localhost:8500/v1/health/service/web?passing'
 # Update service definition file
+echo '{
+  "service": {
+    "name": "web",
+    "tags": [
+      "rails"
+    ],
+    "port": 80,
+    "check": {
+      "args": [
+        "curl",
+        "localhost"
+      ],
+      "interval": "10s"
+    }
+  }
+}' > ./consul.d/web.json
