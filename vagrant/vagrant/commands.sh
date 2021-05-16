@@ -24,3 +24,6 @@ mkdir html
 vagrant ssh
 wget -qO- 127.0.0.1
 logout
+# Add vagrant share
+vagrant plugin install vagrant-share
+vagrant share
