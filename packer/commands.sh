@@ -18,3 +18,7 @@ cat example.txt
 exit
 # Build with var files
 packer build --var-file=example.pkrvars.hcl docker-ubuntu.pkr.hcl
+# Build with auto vars
+packer build .
+# Set var from command line
+packer build --var docker_image=ubuntu:groovy .
