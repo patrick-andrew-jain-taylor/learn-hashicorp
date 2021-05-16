@@ -26,3 +26,9 @@ nomad job status example
 nomad alloc status <allocation_id>
 # Fetch logs
 nomad alloc logs <allocation_id> redis
+# Plan updated changes
+nomad job plan example.nomad
+# Run change
+nomad job run -check-index <index> example.nomad
+# Check allocations
+nomad job status example
