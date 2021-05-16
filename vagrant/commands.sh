@@ -7,3 +7,5 @@ vagrant ssh
 logout
 # Destroy
 vagrant destroy
+# Specify box
+vagrant box add hashicorp/bionic64
