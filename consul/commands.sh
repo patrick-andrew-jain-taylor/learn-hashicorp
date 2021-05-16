@@ -20,3 +20,28 @@ consul connect proxy -sidecar-for socat
 consul connect proxy -service web -upstream socat:9191
 # Connect to proxy
 nc 127.0.0.1 9191
+
+# Register dependent service
+echo '{
+  "service": {
+    "name": "web",
+    "connect": {
+      "sidecar_service": {
+        "proxy": {
+          "upstreams": [
+            {
+              "destination_name": "socat",
+              "local_bind_port": 9191
+            }
+          ]
+        }
+      }
+    }
+  }
+}' > ./consul.d/web.json
+# Reload consul
+consul reload
+# Test connection - fails
+nc 127.0.0.1 9191
+# Start web proxy
+consul connect proxy -sidecar-for web
