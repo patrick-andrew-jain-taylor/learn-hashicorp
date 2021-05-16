@@ -51,3 +51,5 @@ echo '{
     }
   }
 }' > ./consul.d/web.json
+# Reload consul
+consul reload
