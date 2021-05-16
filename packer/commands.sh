@@ -10,3 +10,9 @@ packer build docker-ubuntu.pkr.hcl
 docker images
 # Destroy image
 docker rmi <image_id>
+# Launch image
+docker run -it <image_id>
+# Check for provisioned file
+cat example.txt
+# Exit
+exit
