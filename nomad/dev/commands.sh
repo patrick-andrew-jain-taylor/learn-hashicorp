@@ -32,3 +32,11 @@ nomad job plan example.nomad
 nomad job run -check-index <index> example.nomad
 # Check allocations
 nomad job status example
+# Stop job
+nomad job stop example
+# Check allocations
+nomad job status example
+# Halt vagrant
+vagrant halt
+# Destroy VM
+vagrant destroy
