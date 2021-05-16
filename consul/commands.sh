@@ -45,3 +45,13 @@ consul reload
 nc 127.0.0.1 9191
 # Start web proxy
 consul connect proxy -sidecar-for web
+# Test connection - succeeds
+nc 127.0.0.1 9191
+# Control communication with intentions
+consul intention create -deny web socat
+# Test connection - fails
+nc 127.0.0.1 9191
+# Delete intention
+consul intention delete web socat
+# Test connection - succeeds
+nc 127.0.0.1 9191
