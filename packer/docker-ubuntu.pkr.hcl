@@ -16,6 +16,7 @@ build {
   sources = [
     "source.docker.ubuntu"
   ]
+
   provisioner "shell" {
     environment_vars = [
       "FOO=hello world",
@@ -25,5 +26,10 @@ build {
       "echo \"FOO is $FOO\" > example.txt",
     ]
   }
+
+  provisioner "shell" {
+    inline = ["echo This provisioner runs last"]
+  }
 }
+
 
